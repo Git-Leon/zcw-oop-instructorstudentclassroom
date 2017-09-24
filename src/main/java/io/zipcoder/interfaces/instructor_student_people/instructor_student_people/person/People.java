@@ -1,4 +1,4 @@
-package io.zipcoder.interfaces;
+package io.zipcoder.interfaces.instructor_student_people.instructor_student_people.person;
 
 import java.util.ArrayList;
 

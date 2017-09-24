@@ -1,4 +1,7 @@
-package io.zipcoder.interfaces;
+package io.zipcoder.interfaces.instructor_student_people.instructor_student_people;
+
+import io.zipcoder.interfaces.instructor_student_people.instructor_student_people.person.Instructor;
+import io.zipcoder.interfaces.instructor_student_people.instructor_student_people.person.People;
 
 /**
  * Created by Chris on 9/23/2017.
