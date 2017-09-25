@@ -12,19 +12,18 @@ public enum Educator implements Teacher {
     IYASU,
     DOLIO,
     MIKAILA;
-    private final Instructor instructor;
-
-    Educator() {
-        this.instructor = new Instructor(name(), ordinal());
-    }
 
     @Override
     public void teach(Student student, double numberOfHours) {
-        instructor.teach(student, numberOfHours);
+        student.learn(numberOfHours);
     }
+
 
     @Override
     public void lecture(Student[] students, double numberOfHours) {
-        instructor.lecture(students, numberOfHours);
+        double numberOfHoursPerStudent = numberOfHours / students.length;
+        for (Student student : students) {
+            student.learn(numberOfHoursPerStudent);
+        }
     }
 }

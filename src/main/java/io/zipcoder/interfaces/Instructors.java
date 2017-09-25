@@ -7,7 +7,7 @@ public final class Instructors extends People {
     private static final Instructors INSTANCE = new Instructors();
     private Instructors() {
         for (Educator educator : Educator.values()) {
-            add(new Instructor(educator.name(), educator.ordinal()));
+            add(new Instructor(educator));
         }
     }
 
