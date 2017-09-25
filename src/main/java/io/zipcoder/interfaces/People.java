@@ -7,7 +7,6 @@ import java.util.ArrayList;
  */
 public class People {
     protected final ArrayList<Person> people = new ArrayList<>();
-    private Object students;
 
     public void add(Person person) {
         people.add(person);

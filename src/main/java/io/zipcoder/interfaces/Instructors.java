@@ -6,11 +6,8 @@ package io.zipcoder.interfaces;
 public final class Instructors extends People {
     private static final Instructors INSTANCE = new Instructors();
     private Instructors() {
-        String[] instructorNames = { "Leon", "Tariq", "Froilan", "David", "Zach", "Iyasu" };
-        for (String instructorName : instructorNames) {
-            int id = getCount();
-            Instructor instructor = new Instructor(instructorName, id);
-            add(instructor);
+        for (Educator educator : Educator.values()) {
+            add(new Instructor(educator.name(), educator.ordinal()));
         }
     }
 
