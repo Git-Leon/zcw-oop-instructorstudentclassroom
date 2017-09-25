@@ -5,12 +5,16 @@ package io.zipcoder.interfaces;
  */
 public enum ZipCodeWilmington {
     INSTANCE;
-    private final MyCohort cohort = MyCohort.getInstance();
-    private final People instructors = ZipCodeInstructors.getInstance();
+    private static final Students cohort = Students.getInstance();
+    private static final People instructors = Instructors.getInstance();
 
     public void hostLecture(long id, double numberOfHours) {
         Instructor instructor = (Instructor) instructors.findById(id);
         instructor.lecture(cohort.getStudents(), numberOfHours);
+    }
+
+    public void hostLecture(Instructor instructor, double numberOfHours) {
+
     }
 
     public People getCohort() {

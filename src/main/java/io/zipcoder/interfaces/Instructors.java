@@ -3,9 +3,9 @@ package io.zipcoder.interfaces;
 /**
  * Created by Chris on 9/23/2017.
  */
-public final class ZipCodeInstructors extends People {
-    private static final ZipCodeInstructors INSTANCE = new ZipCodeInstructors();
-    private ZipCodeInstructors() {
+public final class Instructors extends People {
+    private static final Instructors INSTANCE = new Instructors();
+    private Instructors() {
         String[] instructorNames = { "Leon", "Tariq", "Froilan", "David", "Zach", "Iyasu" };
         for (String instructorName : instructorNames) {
             int id = getCount();
@@ -14,7 +14,7 @@ public final class ZipCodeInstructors extends People {
         }
     }
 
-    public static ZipCodeInstructors getInstance() {
+    public static Instructors getInstance() {
         return INSTANCE;
     }
 

@@ -3,10 +3,10 @@ package io.zipcoder.interfaces;
 /**
  * Created by Chris on 9/23/2017.
  */
-public final class MyCohort extends People {
-    private static final MyCohort INSTANCE = new MyCohort();
+public final class Students extends People {
+    private static final Students INSTANCE = new Students();
 
-    private MyCohort() {
+    private Students() {
         String[] studentNames = { "Karen", "Liel", "Quinn", "Destiny", "Blesson", "Danielle B.", "Andre", "Jeff",
                 "Carlo", "Julia D.", "Natalie", "Julia E.", "Shylee", "Genevieve", "Margo", "Whitney", "Rachel",
                 "Bridget", "Seung", "Jessica", "Harry", "Kesler", "Darin", "Jade", "Dominika", "Nashae", "Brianna",
@@ -19,7 +19,7 @@ public final class MyCohort extends People {
         }
     }
 
-    public static MyCohort getInstance() {
+    public static Students getInstance() {
         return INSTANCE;
     }
 
