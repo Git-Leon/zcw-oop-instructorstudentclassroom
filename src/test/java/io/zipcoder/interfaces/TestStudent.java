@@ -8,13 +8,11 @@ import org.junit.Test;
  * Created by Chris on 9/23/2017.
  */
 public class TestStudent {
-    private String studentName;
     private Student student;
 
     @Before
     public void setup() {
-        this.studentName = "Leon";
-        this.student = new Student(studentName, 0);
+        this.student = new Student("", 0);
     }
 
     @Test

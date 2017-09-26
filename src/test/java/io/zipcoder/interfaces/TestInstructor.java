@@ -8,13 +8,11 @@ import org.junit.Test;
  * Created by Chris on 9/23/2017.
  */
 public class TestInstructor {
-    private String instructorName;
     private Instructor instructor;
 
     @Before
     public void setup() {
-        this.instructorName = "Leon";
-        this.instructor = new Instructor(instructorName, 0);
+        this.instructor = Educator.LEON.asInstructor();
     }
 
     @Test
@@ -23,7 +21,6 @@ public class TestInstructor {
     }
 
     @Test
-
     public void testTeach() {
         //Given
         Student dummyStudent = new Student("I am a dummy", 0);

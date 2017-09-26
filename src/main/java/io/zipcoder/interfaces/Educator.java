@@ -13,17 +13,42 @@ public enum Educator implements Teacher {
     DOLIO,
     MIKAILA;
 
-    @Override
-    public void teach(Student student, double numberOfHours) {
-        student.learn(numberOfHours);
+    private double timeWorked;
+    private final Instructor instructor;
+
+    Educator() {
+        Instructors instructors = Instructors.getInstance();
+        Instructor instructor = new Instructor(name(), instructors.getCount()) {
+            @Override
+            public void teach(Learner learner, double numberOfHours) {
+                super.teach(learner, numberOfHours);
+                timeWorked += numberOfHours;
+            }
+        };
+        instructors.add(instructor);
+        this.instructor = instructors.findById(instructor.getId());
     }
 
+    public Instructor asInstructor() {
+        return instructor;
+    }
 
     @Override
-    public void lecture(Student[] students, double numberOfHours) {
-        double numberOfHoursPerStudent = numberOfHours / students.length;
-        for (Student student : students) {
-            student.learn(numberOfHoursPerStudent);
-        }
+    public void teach(Learner student, double numberOfHours) {
+        instructor.teach(student, numberOfHours);
+    }
+
+    @Override
+    public void lecture(Learner[] students, double numberOfHours) {
+        instructor.lecture(students, numberOfHours);
+    }
+
+    @Override
+    public String toString() {
+        return new StringBuilder()
+                .append("Name = " + instructor.getName())
+                .append("\nId = " + instructor.getId())
+                .append("\nTime worked = " + timeWorked)
+                .toString();
     }
 }

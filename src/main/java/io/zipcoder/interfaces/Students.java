@@ -1,17 +1,19 @@
 package io.zipcoder.interfaces;
 
+import java.util.HashMap;
+
 /**
  * Created by Chris on 9/23/2017.
  */
-public final class Students extends People {
+public final class Students extends People<Student> {
     private static final Students INSTANCE = new Students();
 
     private Students() {
-        String[] studentNames = { "Karen", "Liel", "Quinn", "Destiny", "Blesson", "Danielle B.", "Andre", "Jeff",
+        String[] studentNames = {"Karen", "Liel", "Quinn", "Destiny", "Blesson", "Danielle B.", "Andre", "Jeff",
                 "Carlo", "Julia D.", "Natalie", "Julia E.", "Shylee", "Genevieve", "Margo", "Whitney", "Rachel",
                 "Bridget", "Seung", "Jessica", "Harry", "Kesler", "Darin", "Jade", "Dominika", "Nashae", "Brianna",
                 "Laurent", "Rina", "Emily", "Elisha", "Caitlin", "Kierra", "Dana", "Alyssa", "Humaira", "Prajwal",
-                "Cristine",  "Brendan" };
+                "Cristine", "Brendan"};
         for (String studentName : studentNames) {
             int id = getCount();
             Student student = new Student(studentName, id);
@@ -23,15 +25,28 @@ public final class Students extends People {
         return INSTANCE;
     }
 
-    // TODO - Replace with generic inheritance to prevent odd casting issues of subclasses
-    public Student[] getStudents() {
-        int numberOfStudents = getCount();
-        Student[] students = new Student[numberOfStudents];
-        for(int i=0; i<people.size(); i++) {
-            Person currentPerson = people.get(i);
-            students[i] = (Student) currentPerson;
+    public HashMap<Student, Double> getStudyMap() {
+        HashMap<Student, Double> studyMap = new HashMap<Student, Double>() {
+            public String toString() {
+                StringBuilder sb = new StringBuilder();
+                for (Entry<Student, Double> entry : entrySet()) {
+                    String name = entry.getKey().getName();
+                    double studyTime = entry.getValue();
+                    sb.append("\n\nName = " + name + "\nStudy time = " + studyTime);
+                }
+                return sb.toString();
+            }
+        };
+
+
+        for (Student student : super.people) {
+            studyMap.put(student, student.getTotalStudyTime());
         }
-        return students;
+        return studyMap;
     }
 
+    @Override
+    public Student[] getArray() {
+        return people.stream().toArray(Student[]::new);
+    }
 }

@@ -3,13 +3,13 @@ package io.zipcoder.interfaces;
 /**
  * Created by Chris on 9/23/2017.
  */
-public final class Educators extends People<Instructor> {
-    private static final Educators INSTANCE = new Educators();
+public final class Instructors extends People<Instructor> {
+    private static final Instructors INSTANCE = new Instructors();
 
-    private Educators() {
+    private Instructors() {
     }
 
-    public static Educators getInstance() {
+    public static Instructors getInstance() {
         return INSTANCE;
     }
 

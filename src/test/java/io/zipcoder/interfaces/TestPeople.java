@@ -12,7 +12,12 @@ public class TestPeople {
 
     @Before
     public void setup() {
-        this.people = new People();
+        this.people = new People() {
+            @Override
+            public Person[] getArray() {
+                return new Person[this.people.size()];
+            }
+        };
     }
 
     @Test

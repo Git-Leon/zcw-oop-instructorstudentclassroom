@@ -1,14 +1,15 @@
 package io.zipcoder.interfaces;
 
 import java.util.ArrayList;
+import java.util.function.IntFunction;
 
 /**
  * Created by Chris on 9/23/2017.
  */
-public class People {
-    protected final ArrayList<Person> people = new ArrayList<>();
+abstract public class People<E extends Person> {
+    protected final ArrayList<E> people = new ArrayList<>();
 
-    public void add(Person person) {
+    public void add(E person) {
         people.add(person);
     }
 
@@ -16,16 +17,14 @@ public class People {
         return people.size();
     }
 
-    public Person[] getArray() {
-        return people.stream().toArray(Person[]::new);
-    }
+    abstract public E[] getArray();
 
     public void removeAll() {
         people.clear();
     }
 
-    public Person findById(long personId) {
-        for (Person person : people) {
+    public E findById(long personId) {
+        for (E person : people) {
             if (person.getId() == personId) {
                 return person;
             }

@@ -17,7 +17,7 @@ public class TestStudents {
                 "Bridget", "Seung", "Jessica", "Harry", "Kesler", "Darin", "Jade", "Dominika", "Nashae", "Brianna",
                 "Laurent", "Rina", "Emily", "Elisha", "Caitlin", "Kierra", "Dana", "Alyssa", "Humaira", "Prajwal",
                 "Cristine", "Brendan");
-        for(Person person : Students.getInstance().getStudents()) {
+        for(Person person : Students.getInstance().getArray()) {
             Assert.assertTrue(studentNames.contains(person.getName()));
         }
     }

@@ -15,7 +15,7 @@ public class TestInstructors {
     public void test() {
         List<String> instructorNames = Arrays.asList(
                 "LEON", "TARIQ", "FROILAN", "DAVID", "ZACH", "IYASU", "DOLIO", "MIKAILA");
-        for(Person person : Instructors.getInstance().getInstructors()) {
+        for(Person person : Instructors.getInstance().getArray()) {
             Assert.assertTrue(instructorNames.contains(person.getName().toUpperCase()));
         }
     }
