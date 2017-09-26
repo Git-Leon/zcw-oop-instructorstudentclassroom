@@ -13,15 +13,17 @@ public class TestZipCodeWilmington {
 
     @Test
     public void testHostLectureInstructor() {
-        for(Instructor instructor : Instructors.getInstance().getArray()) {
-            testHostLecture(instructor);
-        }
+        testHostLecture(Instructors.getInstance().getArray());
     }
 
     @Test
     public void testHostLectureEducators() {
-        for(Educator educator : Educator.values()) {
-            testHostLecture(educator);
+        testHostLecture(Educator.values());
+    }
+
+    private void testHostLecture(Teacher[] teachers) {
+        for (Teacher teacher : teachers) {
+            testHostLecture(teacher);
         }
     }
 
