@@ -18,13 +18,7 @@ public enum Educator implements Teacher {
 
     Educator() {
         Instructors instructors = Instructors.getInstance();
-        Instructor instructor = new Instructor(name(), instructors.getCount()) {
-            @Override
-            public void teach(Learner learner, double numberOfHours) {
-                super.teach(learner, numberOfHours);
-                timeWorked += numberOfHours;
-            }
-        };
+        Instructor instructor = getWorkingInstructor();
         instructors.add(instructor);
         this.instructor = instructors.findById(instructor.getId());
     }
@@ -50,5 +44,15 @@ public enum Educator implements Teacher {
                 .append("\nId = " + instructor.getId())
                 .append("\nTime worked = " + timeWorked)
                 .toString();
+    }
+
+    private Instructor getWorkingInstructor() {
+        return new Instructor(name(), Instructors.getInstance().getCount()) {
+            @Override
+            public void teach(Learner learner, double numberOfHours) {
+                super.teach(learner, numberOfHours);
+                Educator.this.timeWorked += numberOfHours;
+            }
+        };
     }
 }
