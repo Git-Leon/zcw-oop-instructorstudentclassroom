@@ -47,7 +47,7 @@ public enum Educator implements Teacher {
     }
 
     private Instructor getWorkingInstructor() {
-        return new Instructor(name(), Instructors.getInstance().getCount()) {
+        return new Instructor(name()) {
             @Override
             public void teach(Learner learner, double numberOfHours) {
                 super.teach(learner, numberOfHours);

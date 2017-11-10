@@ -1,7 +1,6 @@
 package io.zipcoder.interfaces;
 
 import java.util.ArrayList;
-import java.util.function.IntFunction;
 
 /**
  * Created by Chris on 9/23/2017.
@@ -29,9 +28,7 @@ abstract public class People<E extends Person> {
                 return person;
             }
         }
-        String errorMessage = "Person with id " + personId + " was not found";
+        String errorMessage = "Person with id '" + personId + "' was not found";
         throw new IllegalArgumentException(errorMessage);
     }
-
-
 }

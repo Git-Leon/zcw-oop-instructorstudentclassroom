@@ -24,7 +24,7 @@ public class TestPeople {
     public void testAdd() {
         // Given
         long studentId = 0;
-        Student expected = new Student("I am a dummy", studentId);
+        Student expected = new Student("I am a dummy");
 
         // When
         this.people.add(expected);

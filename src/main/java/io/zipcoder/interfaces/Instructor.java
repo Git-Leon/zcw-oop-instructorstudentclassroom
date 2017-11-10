@@ -4,9 +4,8 @@ package io.zipcoder.interfaces;
  * Created by Chris on 9/23/2017.
  */
 public class Instructor extends Person implements Teacher {
-
-    public Instructor(String name, int ordinal) {
-        super(name, ordinal);
+    public Instructor(String name) {
+        super(name, Instructors.getInstance().getCount());
     }
 
     @Override

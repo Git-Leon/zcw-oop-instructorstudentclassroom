@@ -12,7 +12,7 @@ public class TestStudent {
 
     @Before
     public void setup() {
-        this.student = new Student("", 0);
+        this.student = new Student("");
     }
 
     @Test

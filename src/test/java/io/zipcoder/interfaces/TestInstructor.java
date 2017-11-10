@@ -23,7 +23,7 @@ public class TestInstructor {
     @Test
     public void testTeach() {
         //Given
-        Student dummyStudent = new Student("I am a dummy", 0);
+        Student dummyStudent = new Student("I am a dummy");
         double preStudyTime = dummyStudent.getTotalStudyTime();
         double expectedStudyTime = 10;
 
