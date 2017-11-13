@@ -12,7 +12,7 @@ import java.util.concurrent.ThreadLocalRandom;
 public class TestZipCodeWilmington {
 
     @Test
-    public void testHostLectureInstructor() {
+    public void testHostLectureInstructors() {
         testHostLecture(Instructors.getInstance().getArray());
     }
 
