@@ -23,12 +23,11 @@ public class TestPeople {
     @Test
     public void testAdd() {
         // Given
-        long studentId = 0;
         Student expected = new Student("I am a dummy");
 
         // When
         this.people.add(expected);
-        Person actual = this.people.findById(studentId);
+        Person actual = this.people.findById(expected.getId());
 
         // Then
         Assert.assertEquals(expected, actual);

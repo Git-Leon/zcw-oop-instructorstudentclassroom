@@ -6,7 +6,7 @@ import java.util.HashMap;
  * Created by Chris on 9/23/2017.
  */
 public final class Students extends People<Student> {
-    public static volatile Students INSTANCE = new Students();
+    public static volatile Students INSTANCE;
 
     private Students() {
     }
