@@ -6,24 +6,24 @@ import java.util.ArrayList;
  * Created by Chris on 9/23/2017.
  */
 abstract public class People<E extends Person> {
-    protected final ArrayList<E> people = new ArrayList<>();
+    protected final ArrayList<E> personList = new ArrayList<>();
 
     public void add(E person) {
-        people.add(person);
+        personList.add(person);
     }
 
     public int getCount() {
-        return people.size();
+        return personList.size();
     }
 
     abstract public E[] getArray();
 
     public void removeAll() {
-        people.clear();
+        personList.clear();
     }
 
     public E findById(long personId) {
-        for (E person : people) {
+        for (E person : personList) {
             if (person.getId() == personId) {
                 return person;
             }

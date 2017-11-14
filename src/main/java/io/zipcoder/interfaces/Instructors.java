@@ -15,6 +15,6 @@ public final class Instructors extends People<Instructor> {
 
     @Override
     public Instructor[] getArray() {
-        return super.people.stream().toArray(Instructor[]::new);
+        return super.personList.stream().toArray(Instructor[]::new);
     }
 }

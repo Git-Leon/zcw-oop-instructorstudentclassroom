@@ -40,7 +40,7 @@ public final class Students extends People<Student> {
             }
         };
 
-        for (Student student : super.people) {
+        for (Student student : super.personList) {
             studyMap.put(student, student.getTotalStudyTime());
         }
         return studyMap;
@@ -48,6 +48,6 @@ public final class Students extends People<Student> {
 
     @Override
     public Student[] getArray() {
-        return super.people.stream().toArray(Student[]::new);
+        return super.personList.stream().toArray(Student[]::new);
     }
 }
