@@ -1,4 +1,4 @@
-package io.zipcoder.interfaces;
+package io.zipcoder.school;
 
 /**
  * Created by Chris on 9/23/2017.

@@ -1,4 +1,4 @@
-package io.zipcoder.interfaces;
+package io.zipcoder.school;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -40,7 +40,7 @@ public class TestZipCodeWilmington {
         HashMap<Student, Double> postStudyMap = students.getStudyMap();
 
         // Then
-        for (Student student : students.getArray()) {
+        for (Student student : students) {
             double preStudyTime = preStudyMap.get(student);
             double postStudyTime = postStudyMap.get(student);
 
@@ -49,5 +49,4 @@ public class TestZipCodeWilmington {
             Assert.assertEquals(expected, actual, .00000000000001);
         }
     }
-
 }

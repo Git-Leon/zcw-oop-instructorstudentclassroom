@@ -1,4 +1,4 @@
-package io.zipcoder.interfaces;
+package io.zipcoder.school;
 
 import org.junit.Assert;
 import org.junit.Before;

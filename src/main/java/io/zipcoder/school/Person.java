@@ -1,4 +1,4 @@
-package io.zipcoder.interfaces;
+package io.zipcoder.school;
 
 public class Person {
     private String name;

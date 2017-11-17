@@ -1,4 +1,4 @@
-package io.zipcoder.interfaces;
+package io.zipcoder.school;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -17,7 +17,7 @@ public class TestStudents {
                 "Bridget", "Seung", "Jessica", "Harry", "Kesler", "Darin", "Jade", "Dominika", "Nashae", "Brianna",
                 "Laurent", "Rina", "Emily", "Elisha", "Caitlin", "Kierra", "Dana", "Alyssa", "Humaira", "Prajwal",
                 "Cristine", "Brendan");
-        for(Person person : Students.getInstance().getArray()) {
+        for(Person person : Students.getInstance()) {
             Assert.assertTrue(studentNames.contains(person.getName()));
         }
     }
