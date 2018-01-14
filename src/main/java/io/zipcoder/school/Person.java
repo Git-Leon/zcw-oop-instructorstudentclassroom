@@ -2,7 +2,7 @@ package io.zipcoder.school;
 
 public class Person {
     private String name;
-    protected final long id;
+    private final long id;
     public Person(String name, long id) {
         this.name = name;
         this.id = id;
